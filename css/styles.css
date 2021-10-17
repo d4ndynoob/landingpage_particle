@@ -1,0 +1,227 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+
+:root{
+    --titulos: 700;
+    --subtitulos: 400;
+    --normal: 300;
+    --button-padding: 0.75rem 1.5625rem;
+    --button-transition: all .2s;
+    --button-scale: scale(1.08);
+}
+
+#particles-js{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Rowdies', cursive;
+    background-color: transparent;
+    background: linear-gradient(90deg, #3a47d5 0%, #00d2ff 100%);
+    overflow-x: hidden;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 100px repeat(4, 1fr) 100px;
+    grid-template-rows: auto 500px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+}
+/* HEADER */
+.header{
+    /* Grid */
+    grid-column: 2 / -2;
+    grid-row: 1 / 2;
+    height: max-content;
+    background-color: transparent;
+}
+.nav{
+    height: max-content;
+    width: 100%;
+    padding: 1.25rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__login{
+    display: inline-block;
+    padding: var(--button-padding);
+    text-decoration: none;
+    background-color: transparent;
+    border: 0.0625rem solid whitesmoke;
+    border-radius: 1.5625rem;
+    color: whitesmoke;
+    outline: none;
+    transition: var(--button-transition);
+}
+.nav__login:hover{
+    transform: var(--button-scale);
+    background-color: whitesmoke;
+    color: black;
+}
+.nav__menu{
+    color: whitesmoke;
+    font-size: 35px;
+    display: none;
+}
+.nav__title{
+    font-weight: var(--titulos);
+    font-size: 2.8125rem;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+.nav__ul{
+    min-width: 25rem;
+    display: flex;
+    justify-content: space-between;
+}
+.nav__li{
+    list-style: none;
+    color: whitesmoke;
+    font-weight: var(--normal);
+    font-size: 1rem;
+}
+.nav__a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.nav__a:hover{
+    color: black;
+}
+
+.texto-general{
+    grid-column: 2/4;
+    grid-row: 2/3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.texto-general__titulo{
+    font-weight: var(--normal);
+    font-size: 3.4375rem;
+}
+.texto-general__parrafo{
+    font-weight: var(--normal);
+    font-size: 1rem;
+    line-height: 2.25rem;
+}
+.texto-general__link{
+    display: inline-block;
+    width: max-content;
+    padding: var(--button-padding);
+    text-decoration: none;
+    border-radius: 1.5625rem;
+    background: transparent;
+    border: 0.0625rem white solid;
+    color: whitesmoke;
+    font-weight: var(--normal);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    outline: none;
+    transition: var(--button-transition);
+}
+.texto-general__link:hover{
+    transform: var(--button-scale);
+    background-color: whitesmoke;
+    color: black;
+}
+.img-general{
+    grid-row: 2/3;
+    grid-column: 4/-2;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.img-general__img{
+    width: 80%;
+    height: 80%;
+    background-color: transparent;
+}
+
+/* MODIFICADORES*/
+
+
+
+/* Querys */
+@media only screen and (max-width: 935px) {
+    html{
+        font-size: 15px;
+    }
+    .nav__ul{
+        display: none;
+    }
+    .nav__login{
+        display: none;
+    }
+    .nav__menu{
+        display: inline-block;
+    }
+}
+@media only screen and (max-width: 825px) {
+    html{
+        font-size: 14px;
+    }
+    .container{
+        grid-template-rows: auto 300px;
+    }
+    .texto-general{
+        grid-column: 2/-2;
+        grid-row: 2/3;
+    }
+    .img-general{
+        grid-column: 2/-2;
+        grid-row: 3/4;
+    }
+    .img-general__img{
+        width: 90%;
+        height: 90%;
+    }
+}
+@media only screen and (max-width: 685px) {
+    html{
+        font-size: 13px;
+    }
+    .container{
+        grid-template-rows: auto 350px;
+    }
+    .img-general__img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    html{
+        font-size: 12px;
+    }
+    .container{
+        grid-template-rows: auto 400px;
+        grid-template-columns: 50px repeat(4, 1fr) 50px;
+    }
+    .img-general{
+        grid-column: 1/-1;
+        grid-row: 3/4;
+    }
+    .img-general__img{
+        width: 90%;
+        height: 90%;
+    }
+}
